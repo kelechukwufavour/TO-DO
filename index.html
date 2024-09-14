@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Todo App</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Todo</h1>
+    
+    <!-- Theme Toggle Button -->
+    <button id="theme-toggle">Toggle Dark Mode</button>
+
+    <!-- Input to add new todos -->
+    <input type="text" id="new-todo" placeholder="Add a new task" />
+    <button id="add-todo">Add Todo</button>
+
+    <!-- Todo List -->
+    <ul id="todo-list" class="todo-list"></ul>
+
+    <!-- Filter Buttons -->
+    <div class="filter-buttons">
+      <button id="all" class="filter active">All</button>
+      <button id="active" class="filter">Active</button>
+      <button id="completed" class="filter">Completed</button>
+    </div>
+
+    <!-- Clear Completed Button -->
+    <button id="clear-completed">Clear Completed Todos</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

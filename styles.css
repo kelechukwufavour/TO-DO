@@ -1,0 +1,100 @@
+/* Light Mode Variables */
+:root {
+    --background-color: #fff;
+    --text-color: #333;
+    --todo-bg-color: #f9f9f9;
+    --border-color: #ccc;
+  }
+  
+  /* Dark Mode Variables */
+  .dark-mode {
+    --background-color: #333;
+    --text-color: #f1f1f1;
+    --todo-bg-color: #444;
+    --border-color: #666;
+  }
+  
+  /* General Styling */
+  body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: var(--todo-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  input, button {
+    padding: 10px;
+    margin-top: 10px;
+  }
+  
+  input {
+    width: 70%;
+  }
+  
+  button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Todo List */
+  .todo-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .todo-list li {
+    background-color: var(--todo-bg-color);
+    margin: 5px 0;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .todo-list li.completed {
+    text-decoration: line-through;
+    opacity: 0.6;
+  }
+  
+  /* Filter Buttons */
+  .filter-buttons {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .filter {
+    padding: 10px;
+  }
+  
+  .filter.active {
+    background-color: #007BFF;
+    color: white;
+  }
+  
+  /* Clear Completed Button */
+  #clear-completed {
+    margin-top: 20px;
+    background-color: red;
+  }
+  
