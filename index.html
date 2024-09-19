@@ -1,43 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Todo App</title>
-  <link rel="stylesheet" href="styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Todo App</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Wrapper for light/dark mode -->
+    <div class="theme-container">
+        <!-- Hero Container -->
+        <div class="hero-container">
+            <h1 class="hero-title">TODO</h1>
 
-  <!-- Hero Container -->
-  <div class="hero-container">
-    <h1>Hero Section</h1>
-  </div>
+            <!-- Overlay Background Images -->
+            <div class="bg-container">
+                <img class="bg-img" src="images/bg-desktop-dark.jpg" alt="Decorative Image" />
+                <img class="bg-img" src="images/bg-desktop-light.jpg" alt="Decorative Image" />
+                <img class="bg-img" src="images/bg-mobile-dark.jpg" alt="Decorative Image" />
+            </div>
+        </div>
 
-  <!-- Todo Container - Overlayed -->
-  <div class="todo-container">
-    <h1>Todo App</h1>
-    
-    <!-- Theme Toggle Button -->
-    <button id="theme-toggle">Toggle Dark Mode</button>
+        <!-- Todo Container - Overlayed -->
+        <div class="todo-container">
+            <!-- Toggle for light/dark mode -->
+            <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
+                <img src="images/icon-sun.svg" alt="Light Mode Icon" class="light-icon">
+                <img src="images/icon-moon.svg" alt="Dark Mode Icon" class="dark-icon">
+            </button>
 
-    <!-- Input to add new todos -->
-    <input type="text" id="new-todo" placeholder="Add a new task" />
-    <button id="add-todo">Add Todo</button>
+            <!-- Main content for todo app -->
+            <main>
+                <!-- Input for adding new todos -->
+                <section class="todo-input-section">
+                    <form id="todo-form">
+                        <input type="text" id="new-todo" placeholder="Create a new todo..." required class="new-todo-input">
+                        <button type="submit" aria-label="Add todo" class="add-todo-btn">
+          
+                        </button>
+                    </form>
+                </section>
 
-    <!-- Todo List -->
-    <ul id="todo-list" class="todo-list"></ul>
+                <section class="todo-list-section">
+                  <ul id="todo-list" class="todo-list">
+                      <li class="todo-item">
+                          <span class="todo-text">Join NLP for morning prayers</span>
+                          <button class="delete-btn">X</button>
+                      </li>
+                      <li class="todo-item">
+                          <span class="todo-text">Do 85 jumping jacks and 15 mins workout session</span>
+                          <button class="delete-btn">X</button>
+                      </li>
+                      <li class="todo-item">
+                          <span class="todo-text">Make the Bed</span>
+                          <button class="delete-btn">X</button>
+                      </li>
+                      <li class="todo-item">
+                          <span class="todo-text">Cook Lunch</span>
+                          <button class="delete-btn">X</button>
+                      </li>
+                      <li class="todo-item">
+                          <span class="todo-text">Get ready for Work</span>
+                          <button class="delete-btn">X</button>
+                      </li>
+                  </ul>
+              </section>
+              
 
-    <!-- Filter Buttons -->
-    <div class="filter-buttons">
-      <button id="all" class="filter active">All</button>
-      <button id="active" class="filter">Active</button>
-      <button id="completed" class="filter">Completed</button>
+                <!-- Filter and clear options -->
+                <section class="todo-footer">
+                    <div class="todo-count">
+                        <span id="items-left">0</span> items left
+                    </div>
+
+                    <!-- Filter by all, active, completed -->
+                    <div class="todo-filter">
+                        <button class="filter-btn active" id="filter-all">All</button>
+                        <button class="filter-btn" id="filter-active">Active</button>
+                        <button class="filter-btn" id="filter-completed">Completed</button>
+                    </div>
+
+                    <!-- Clear completed button -->
+                    <button id="clear-completed" class="clear-btn">Clear Completed</button>
+                </section>
+            </main>
+
+            <!-- Drag and drop instructions -->
+            <section class="drag-drop-info">
+                <p>Drag and drop to reorder list</p>
+            </section>
+        </div>
+
+        <footer>
+            <p>Todo App Challenge by <a href="https://www.frontendmentor.io">Frontend Mentor</a>.</p>
+        </footer>
     </div>
 
-    <!-- Clear Completed Button -->
-    <button id="clear-completed">Clear Completed Todos</button>
-  </div>
-
-  <script src="script.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html>

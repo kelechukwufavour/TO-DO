@@ -1,132 +1,201 @@
-/* Light Mode Variables */
-:root {
-    --background-color: #fff;
-    --text-color: #333;
-    --todo-bg-color: #f9f9f9;
-    --border-color: #ccc;
-  }
-  
-  /* Dark Mode Variables */
-  .dark-mode {
-    --background-color: #333;
-    --text-color: #f1f1f1;
-    --todo-bg-color: #444;
-    --border-color: #666;
-  }
-  
-  /* General Styling */
-  body {
-    background-color: var(--background-color);
-    color: var(--text-color);
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 500px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: var(--todo-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-  }
-  
-  h1 {
-    text-align: center;
-  }
-  
-  /* Hero Container */
-  .hero-container {
-    height: 300px;
-    background-color: black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    position: relative;
-    z-index: 1;
-  }
-  
-  .hero-container h1 {
-    font-size: 36px;
-    text-transform: uppercase;
-  }
-  
-  /* Todo Container */
-  .todo-container {
-    position: absolute;
-    top: 50px; /* Adjust based on your hero height */
-    left: 50%;
-    transform: translateX(-50%);
-    width: 400px;
-    padding: 20px;
-    background-color: #ffffff;
-    border-radius: 10px;
-    z-index: 2; /* Ensures it's on top of the hero */
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  input, button {
-    padding: 10px;
-    margin-top: 10px;
-  }
-  
-  input {
-    width: 70%;
-  }
-  
-  button {
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-  
-  /* Todo List */
-  .todo-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .todo-list li {
-    background-color: var(--todo-bg-color);
-    margin: 5px 0;
-    padding: 10px;
-    border: 1px solid var(--border-color);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .todo-list li.completed {
-    text-decoration: line-through;
-    opacity: 0.6;
-  }
-  
-  /* Filter Buttons */
-  .filter-buttons {
-    display: flex;
-    justify-content: space-between;
-    margin-top: 20px;
-  }
-  
-  .filter {
-    padding: 10px;
-  }
-  
-  .filter.active {
-    background-color: #007BFF;
-    color: white;
-  }
-  
-  /* Clear Completed Button */
-  #clear-completed {
-    margin-top: 20px;
-    background-color: red;
-  }  
+/* Base Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body and overall container styling */
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: black;
+  transition: background-color 0.3s ease;
+}
+
+/* Hero Section Styling */
+.hero-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  background-color: gray; 
+  overflow: hidden;
+}
+
+.hero-title {
+  position: absolute;
+  color: white;
+  font-size: 48px;
+  letter-spacing: 10px;
+  z-index: 2;
+  text-align: center; /* Centered title */
+  padding: 0 20px;
+}
+
+/* Icons Container */
+.icons-container {
+  position: absolute;
+  right: 20px; /* Adjust positioning as needed */
+  top: 20px; /* Adjust positioning as needed */
+  z-index: 2;
+}
+
+.dark-icon, .light-icon {
+  display: inline-block;
+  margin-left: 10px; /* Adjust spacing between icons */
+}
+
+.bg-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0.5;
+  z-index: 1;
+}
+
+
+/* Todo Container */
+.todo-container {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  padding: 20px;
+  background-color: gray; 
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin: 0 auto; 
+  z-index: 2;
+}
+
+
+/* Todo List Styling */
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.todo-item {
+  background-color: black;
+  color: white;
+  padding: 15px;
+  margin-bottom: 2px;
+  border-radius: 5px;
+  border-bottom: 1px solid white;
+  display: flex;
+  align-items: center;
+}
+
+.todo-item.completed .todo-text {
+  text-decoration: line-through;
+  color: #666;
+}
+
+.todo-item:last-child {
+  border-bottom: none; /* No border under the last item */
+}
+
+.todo-text {
+  flex-grow: 1;
+  margin-left: 10px;
+}
+
+/* Circular Button for Numbering and Check Icon */
+.todo-number-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: white;
+  color: black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.todo-number-btn.completed {
+  background-color: green; /* Color changes when completed */
+  color: white;
+}
+
+.todo-number-btn .check-icon {
+  display: none;
+}
+
+.todo-number-btn.completed .check-icon {
+  display: block;
+}
+
+/* Delete Button */
+.delete-btn {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+/* Input Section Styling */
+.todo-input-section {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+  background-color: black; /* Consistent with todo items */
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.new-todo-input {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  background-color: #333;
+  color: white;
+  border-radius: 5px;
+}
+
+.add-todo-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+/* Filter and Clear Options */
+.todo-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.clear-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #ff6b6b;
+}
+
+/* Drag and Drop Information Styling */
+.drag-drop-info {
+  margin-top: 20px;
+  text-align: center; /* Centralized */
+  color: #666;
+  font-size: 14px;
+}
