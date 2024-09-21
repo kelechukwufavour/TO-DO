@@ -5,40 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Todo App</title>
+    <link rel="icon" href="images/favicon.png" type="image/x-icon">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Wrapper for light/dark mode -->
-    <div class="theme-container">
-        <!-- Hero Container -->
-        <div class="hero-container">
-            <h1 class="hero-title">TODO</h1>
 
-            <!-- Overlay Background Images -->
+    <div class="theme-container">
+        <div class="hero-container">
+            <h1 class="header">TODO</h1>
+             <button id="theme-toggle">
+            <img src="images/icon-sun.svg" alt="Toggle theme">
+             </button>
+        </div>
+
+        <div> class="hero-container"
             <div class="bg-container">
                 <img class="bg-img" src="images/bg-desktop-dark.jpg" alt="Decorative Image" />
                 <img class="bg-img" src="images/bg-desktop-light.jpg" alt="Decorative Image" />
-                <img class="bg-img" src="images/bg-mobile-dark.jpg" alt="Decorative Image" />
             </div>
         </div>
-
-        <!-- Todo Container - Overlayed -->
+            
         <div class="todo-container">
-            <!-- Toggle for light/dark mode -->
-            <button id="theme-toggle" aria-label="Toggle theme" class="theme-toggle">
-                <img src="images/icon-sun.svg" alt="Light Mode Icon" class="light-icon">
-                <img src="images/icon-moon.svg" alt="Dark Mode Icon" class="dark-icon">
-            </button>
 
-            <!-- Main content for todo app -->
             <main>
-                <!-- Input for adding new todos -->
                 <section class="todo-input-section">
                     <form id="todo-form">
                         <input type="text" id="new-todo" placeholder="Create a new todo..." required class="new-todo-input">
-                        <button type="submit" aria-label="Add todo" class="add-todo-btn">
-          
-                        </button>
+                        <button type="submit" aria-label="Add todo" class="add-todo-btn"></button>
                     </form>
                 </section>
 
@@ -66,27 +59,20 @@
                       </li>
                   </ul>
               </section>
-              
 
-                <!-- Filter and clear options -->
                 <section class="todo-footer">
                     <div class="todo-count">
                         <span id="items-left">0</span> items left
                     </div>
-
-                    <!-- Filter by all, active, completed -->
                     <div class="todo-filter">
                         <button class="filter-btn active" id="filter-all">All</button>
                         <button class="filter-btn" id="filter-active">Active</button>
                         <button class="filter-btn" id="filter-completed">Completed</button>
                     </div>
-
-                    <!-- Clear completed button -->
                     <button id="clear-completed" class="clear-btn">Clear Completed</button>
                 </section>
             </main>
 
-            <!-- Drag and drop instructions -->
             <section class="drag-drop-info">
                 <p>Drag and drop to reorder list</p>
             </section>
